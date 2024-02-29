@@ -1,0 +1,29 @@
+.borde{
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    border-style: solid;
+    border-color: rgb(10, 10, 10);
+    border-width:thin;
+    background-color: rgb(37, 146, 37);
+}
+.parrafoH1
+{
+    text-align: center;
+}
+.parrafoHo2
+{
+    text-align: left;
+
+}
+.parrafoHo3
+{
+    text-align: right;
+}
+.parrafocolor1
+{
+    color: blue;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+    
+}

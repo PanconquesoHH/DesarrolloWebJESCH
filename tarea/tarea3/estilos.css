@@ -259,16 +259,47 @@
 
 /* css para conteiners*/
 
-a{
+/* a{
     border: 1px solid white;
     font-size: 30px;
     margin: 125px;
     padding: 20px;
     text-decoration:none;
-    background-color:darkgrey;
+    background-color:rgb(253, 252, 252);
     color:black;    
+}*/
 
+/* CSS MAQUETACION*/
 
-
+body{
+    font-family: arial, Arial, Helvetica, sans-serif;
+    background-color: #e8e8e8;
 }
+
+.menu{
+    list-style: none;
+    padding: 0;
+    background-color: #092327;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+}
+.menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 20px;
+    display: block;
+}
+
+.menu li{
+    display: inline-block;
+    text-align: center;
+}
+
+.menu li a:hover{
+    background-color: #1b80bb;
+}
+
+
+
 
