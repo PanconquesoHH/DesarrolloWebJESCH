@@ -1,29 +1,22 @@
-.borde{
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-    border-style: solid;
-    border-color: rgb(10, 10, 10);
-    border-width:thin;
-    background-color: rgb(37, 146, 37);
-}
-.parrafoH1
-{
-    text-align: center;
-}
-.parrafoHo2
-{
-    text-align: left;
 
+#contenido {
+    margin: 0 auto;
+    width: 900px;
+    border: 1px solid black
 }
-.parrafoHo3
-{
-    text-align: right;
+.encabezado{
+    background-color: green;
+    width: 900px;
 }
-.parrafocolor1
-{
-    color: blue;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 25px;
-    
+.logo{
+    background-color: yellow;
+    width: 18px;
 }
+.universidad{
+    width: 80%;
+    background-color: red;
+}
+.titulo-rojo {
+    color: red;
+}
+
