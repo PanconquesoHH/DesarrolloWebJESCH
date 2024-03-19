@@ -7,4 +7,4 @@ if (!isset($_SESSION['c'])) {
 $valor = $_GET['valor'];
 $_SESSION['c']->insertar($valor);
 ?>
-<meta http-equiv="refresh" content="4;url=menu_pila.html">
+<meta http-equiv="refresh" content="4;url=menucola.html">
