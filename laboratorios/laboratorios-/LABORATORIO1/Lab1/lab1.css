@@ -24,6 +24,8 @@ img {
 }
 .titulo {
     color: #FF0000;
+    text-align: center;
+    
 }
 .subtitulo {
     display: flex;
@@ -59,7 +61,7 @@ p {
     border-top: 1px solid black;
 }
 .autentificacion {
-    width: 770px;
+    width: 780px;
     text-align: start;
 }
 .entradadatos {
