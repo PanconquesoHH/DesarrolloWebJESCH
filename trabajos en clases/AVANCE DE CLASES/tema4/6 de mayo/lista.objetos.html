@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1>LISTA DE UTILES</h1>
+
+<body>
+   
+    <div
+     action="recibir.php" method="get">
+        <label for="text" name ="UTIL" > Util: </label>
+        <input type="text" name="nombre" id="texto"> 
+        <input type="submit"onclick="lista()" value="ANIADIR">
+
+        
+    </div>
+
+    <ul id="lista">
+
+    </ul>
+    <script>
+        function lista(){
+            var lista = document.getElementById("lista");
+            var elemento=document.createElement("li");
+            elemento.innerHTML=text;
+            lista.appendChild(elemento);
+            
+        }
+
+    </script>
+    
+</body>
+</html>

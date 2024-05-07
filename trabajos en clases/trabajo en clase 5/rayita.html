@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tres en Raya</title>
+  <style>
+    #board {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 10px;
+    }
+    .cell {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 50px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Juego Tres en Raya</h1>
+  <div id="board">
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+    <div class="cell"></div>
+  </div>
+  <button id="turnBtn">Turno X</button>
+  <div id="message"></div>
+
+  <script>
+    const cells = document.querySelectorAll('.cell');
+    const turnBtn = document.getElementById('turnBtn');
+    const messageDiv = document.getElementById('message');
+    let currentPlayer = 'X';
+
+    cells.forEach(cell => {
+      cell.addEventListener('click', () => {
+        if (cell.textContent === '') {
+          cell.textContent = currentPlayer;
+          checkWin();
+          currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+          turnBtn.textContent = `Turno ${currentPlayer}`;
+        }
+      });
+    });
+
+    function checkWin() {
+      const winCombos = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+        [0, 4, 8], [2, 4, 6] 
+      ];
+
+      for (let combo of winCombos) {
+        const [a, b, c] = combo;
+        if (
+          cells[a].textContent == currentPlayer &&
+          cells[b].textContent == currentPlayer &&
+          cells[c].textContent == currentPlayer
+        ) {
+          messageDiv.textContent = `¡${currentPlayer} gana!`;
+          cells.forEach(cell => cell.removeEventListener('click', handleClick));
+          return;
+        }
+      }
+
+      
+    }
+  </script>
+</body>
+</html>
