@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de Estudiantes</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 700px;
+      margin: 20px auto;
+    }
+    th, td {
+      border: 1px solid #000000;
+      padding: 8px;
+      text-align: left;
+    }
+    th {
+      background-color: #9dbfdb;
+    }
+    .materia, .calificacion {
+      text-align: center;
+    }
+    .par {
+      background-color: rgb(170, 167, 167);
+    }
+    .mejor-estudiante {
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lista de Estudiantes</h1>
+  <table id="listadoEstudiantes">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombres y Apellidos</th>
+        <th>Edad</th>
+        <th>Materia</th>
+        <th>Calificación</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <button id="mostrarMejor">Mostrar Mejor Estudiante</button>
+  <h2>Agregar Estudiante</h2>
+  <form id="formularioEstudiante">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" required>
+    <label for="materia">Materia:</label>
+    <input type="text" id="materia" name="materia" required>
+    <label for="calificacion">Calificación:</label>
+    <input type="number" id="calificacion" name="calificacion" required>
+    <button type="submit">Agregar Estudiante</button>
+  </form>
+  <script>
+    var estudiantes = [];
+    var tablaListadoEstudiantes = document.getElementById("listadoEstudiantes").querySelector("tbody");
+    var formularioEstudiante = document.getElementById("formularioEstudiante");
+    var mostrarMejorBtn = document.getElementById("mostrarMejor");
+
+    function mostrarEstudiantes() {
+      tablaListadoEstudiantes.innerHTML = "";
+      estudiantes.forEach((estudiante, index) => {
+        estudiante.calificaciones.forEach((calificacion, calIndex) => {
+          var fila = tablaListadoEstudiantes.insertRow();
+          fila.insertCell().textContent = calIndex === 0 ? index + 1 : '';
+          fila.insertCell().textContent = calIndex === 0 ? estudiante.nombre : '';
+          fila.insertCell().textContent = calIndex === 0 ? estudiante.edad : '';
+          fila.insertCell().textContent = calificacion.materia;
+          fila.insertCell().textContent = calificacion.calificacion;
+          if ((index + 1) % 2 === 0) {
+            fila.classList.add("par");
+          }
+        });
+      });
+    }
+
+    function agregarEstudiante() {
+      var nombre = document.getElementById("nombre").value;
+      var edad = document.getElementById("edad").value;
+      var materia = document.getElementById("materia").value;
+      var calificacion = parseFloat(document.getElementById("calificacion").value);
+      var nuevoEstudiante = { nombre, edad, calificaciones: [{ materia, calificacion }] };
+      estudiantes.push(nuevoEstudiante);
+      mostrarEstudiantes();
+      formularioEstudiante.reset();
+    }
+
+    function encontrarMejorEstudiante() {
+      let mejorCalificacion = 0;
+      let filasMejorEstudiante = [];
+
+      var filas = tablaListadoEstudiantes.getElementsByTagName("tr");
+      Array.from(filas).forEach(fila => {
+        var calificacion = parseFloat(fila.cells[4].textContent);
+        if (calificacion > mejorCalificacion) {
+          mejorCalificacion = calificacion;
+          filasMejorEstudiante = [fila]; // Reset and add the new best
+        } else if (calificacion === mejorCalificacion) {
+          filasMejorEstudiante.push(fila); // Add equally high scores
+        }
+      });
+
+      filasMejorEstudiante.forEach(fila => fila.classList.add("mejor-estudiante"));
+    }
+
+    formularioEstudiante.addEventListener("submit", (evento) => {
+      evento.preventDefault();
+      agregarEstudiante();
+    });
+
+    mostrarMejorBtn.addEventListener("click", encontrarMejorEstudiante);
+  </script>
+</body>
+</html>
+
+
