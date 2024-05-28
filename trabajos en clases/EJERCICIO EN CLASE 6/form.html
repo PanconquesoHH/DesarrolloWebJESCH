@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de Personas</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th {
+            background-color: blue;
+            color: white;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid black;
+        }
+        tr:nth-child(even) {
+            background-color: white;
+        }
+        tr:nth-child(odd) {
+            background-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenido"></div>
+
+    <script>
+        function mostrar() {
+            var contenido = document.getElementById('contenido');
+            var ajax = new XMLHttpRequest();
+            ajax.open("GET", "personas.php", true);
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState == 4 && ajax.status == 200) {
+                    var personas = JSON.parse(ajax.responseText);
+                    var table = '<table>';
+                    table += `
+                        <thead>
+                            <tr>
+                                <th>Fotografía</th>
+                                <th>ID</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Edad</th>
+                                <th>Sexo</th>
+                                <th>Ocupación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    `;
+
+                    personas.forEach(function(persona, index) {
+                        table += `
+                            <tr>
+                                <td><img src="${persona.fotografia}" alt="Foto" width="50" height="50"></td>
+                                <td>${persona.id}</td>
+                                <td>${persona.nombres}</td>
+                                <td>${persona.apellidos}</td>
+                                <td>${persona.edad}</td>
+                                <td>${persona.sexo}</td>
+                                <td>${persona.ocupacion}</td>
+                            </tr>
+                        `;
+                    });
+
+                    table += '</tbody></table>';
+                    contenido.innerHTML = table;
+                }
+            };
+            ajax.send();
+        }
+
+        document.addEventListener('DOMContentLoaded', mostrar);
+    </script>
+</body>
+</html>
