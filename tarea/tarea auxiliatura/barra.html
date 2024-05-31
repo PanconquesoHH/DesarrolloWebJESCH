@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Búsqueda</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column">
+        <input type="text" name="barra" id="barra" style="width: 300px" />
+        <div class="resultados" id="resultados"></div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('#barra').on('input', function() {
+                var texto = $(this).val();
+                if (texto.length > 0) {
+                    console.log("Texto ingresado: ", texto); 
+                    $.ajax({
+                        type: 'POST',
+                        url: 'datos.php',
+                        data: { texto: texto },
+                        success: function(data) {
+                            console.log("Respuesta del servidor: ", data); 
+                            var resultados = JSON.parse(data);
+                            $('#resultados').empty();
+                            if (resultados.length > 0) {
+                                resultados.forEach(function(resultado) {
+                                    $('#resultados').append('<div>' + resultado.nombre_carrera + '</div>');
+                                });
+                            } else {
+                                $('#resultados').append('<div>No se encontraron resultados</div>');
+                            }
+                        },
+                        error: function(xhr, status, error) {
+                            console.error("Error en la solicitud AJAX: ", status, error);
+                        }
+                    });
+                } else {
+                    $('#resultados').empty();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
+
