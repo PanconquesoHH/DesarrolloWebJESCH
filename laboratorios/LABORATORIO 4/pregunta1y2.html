@@ -99,9 +99,9 @@
         var calificacion = parseFloat(fila.cells[4].textContent);
         if (calificacion > mejorCalificacion) {
           mejorCalificacion = calificacion;
-          filasMejorEstudiante = [fila]; // Reset and add the new best
+          filasMejorEstudiante = [fila];
         } else if (calificacion === mejorCalificacion) {
-          filasMejorEstudiante.push(fila); // Add equally high scores
+          filasMejorEstudiante.push(fila);
         }
       });
 
