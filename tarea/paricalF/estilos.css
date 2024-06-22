@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover {
+    color: #e3dbdb;
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    max-width: 1200px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #000;
+    background-color: #f4a460;
+}
+
+.cabecera-izquierda {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+.cabecera-derecha {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.cbd-superior {
+    border: 2px solid #000;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    background-color: #f4a460;
+    padding: 10px;
+}
+
+.btn-preguntas {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.btn-pregunta {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px 20px;
+    cursor: pointer;
+    flex-grow: 1;
+    text-align: center;
+}
+
+.lineas-verticales {
+    border-left: 2px solid #000;
+    height: auto;
+    margin: 0 10px;
+}
+
+.tit-preguntas {
+    background-color: #f3d4c8;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    border: 2px dotted #000;
+}
+
+main {
+    display: flex;
+    width: 100%;
+}
+
+.barra-lat-izquierda {
+    width: 200px;
+    background-color: #f08080;
+    padding: 10px;
+}
+
+.btn-opciones {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+.btn-op-principal {
+    background-color: #c04716;
+    color: #fff;
+}
+
+.btn-op-secundarios {
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+}
+
+.contenedor-derecho {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.informacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #000;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.cabecera-informacion {
+    background-color: #d3d3d3;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    color: #3a66d1;
+}
+
+.cabecera-informacion h3 {
+    margin-bottom: 10px;
+}
+
+.footer-informacion {
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+.informacion img {
+    border-radius: 50%;
+    margin: 20px 0;
+}
+
+footer {
+    background-color: #f4a460;
+    text-align: center;
+    padding: 10px;
+    border-top: 1px solid #000;
+    width: 100%;
+}

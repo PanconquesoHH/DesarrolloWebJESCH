@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insertar Alumno</title>
+</head>
+<body>
+    <h1>Insertar Alumno</h1>
+    <form id="insertar-form">
+        <label for="CU">CU:</label>
+        <input type="text" id="CU" name="CU" required><br>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br>
+        <button type="button" onclick="insertarAlumno()">Insertar</button>
+    </form>
+
+    <script>
+        function insertarAlumno() {
+            const CU = document.getElementById('CU').value;
+            const nombre = document.getElementById('nombre').value;
+            const apellido = document.getElementById('apellido').value;
+            
+            fetch('pregunta3.php', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `CU=${CU}&nombre=${nombre}&apellido=${apellido}`,
+            })
+            .then(response => response.text())
+            .then(() => {
+                window.location.href = 'pregunta3.php';
+            });
+        }
+    </script>
+</body>
+</html>
