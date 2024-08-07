@@ -1,0 +1,15 @@
+.contenedor {
+    margin:  0 auto;
+    width: 800px;
+    height: 600px;
+    border: 1px solid rgb(58, 18, 170);
+    background-color: lightblue;
+}
+.caja{
+    
+    margin:0 auto;
+    border: 1px solid green;
+    text-align: center;
+    width: 200px;
+    background-color: purple;
+}
