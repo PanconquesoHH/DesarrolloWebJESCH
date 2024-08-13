@@ -1,0 +1,104 @@
+.amarillo{
+    color:#FFC000
+}
+.rojo {
+    color: #d30801;
+}
+.azul {
+    color: #95B3D7;
+}
+.bg-naranja{
+    background-color: #df652d;
+}
+.bg-amarillo {
+    background-color:#FFC000;
+}
+
+.bg-celeste {
+    background-color: white;
+    border: 1px black;
+}
+.bg-zul{
+    color: #366F91;
+}
+.bg-medionegro{
+    color:#404040;
+}
+.bg-plomo{
+    background-color: #D9D9D9;
+}
+.contenedor {
+    width: 900px;
+    display: flex;
+    margin:auto;
+}
+.contenedor2{
+    width: 800px;
+    display: flex;
+    margin:1px;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 20px;
+}
+.encabezado{
+    width: 900px;
+    display: flex;
+    flex-wrap: nowrap;
+    border: 1px solid black;
+}
+#logo{
+    width: 100px;
+    padding: 10px;
+}
+#titulo{
+    width: 900px;
+}
+#logo2{
+    width: 130px;
+}
+.centrado{
+    text-align: center;
+}
+#texto{
+    width: 770px;
+}
+#menu{
+    width: 120px;
+
+}
+#menu ul li{
+    padding: 5px;
+    margin-bottom: 4px;
+    width: 100px;
+    border: 1px  solid black;
+    color: black;
+    background-color: white;
+    padding: 10px;
+}
+#menu ul{
+    list-style-type: none ;
+    margin: auto;
+    padding: 15px;
+}
+.pie{
+    width: 900px;
+    padding: 10px
+}
+#button{
+    background-color: #C60000;
+    color:white;
+    padding: 3px
+}
+#texto{
+    margin-top: 60px;
+    text-align-last: center;
+}
+.tablaoscura{
+    border: 1px solid black;
+    width: 200px;
+    height: 340px;
+    color: yellow;
+    font-size: 20px;
+    text-align: left;
+    background-color: #393f42   ;
+}
