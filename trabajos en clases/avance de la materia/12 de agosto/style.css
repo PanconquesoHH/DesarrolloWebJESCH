@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    border: 1px solid black;
+    width: 80%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-flow: row wrap;
+    margin: auto;
+    justify-content: flex-end;
+}
+
+.item{
+    width: 300px;
+    border: 2px solid rgb(247, 247, 247);
+    background-color: orange;
+
+}
