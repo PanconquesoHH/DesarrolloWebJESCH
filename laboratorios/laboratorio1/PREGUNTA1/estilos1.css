@@ -1,0 +1,125 @@
+.contenedor {
+    width: 1200px; /* Cambiado de 1350px a 1200px */
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.primero {
+    display: flex;
+    flex-direction: wrap;
+    width: 1350px;
+    margin: auto;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    background-color: black;
+    align-items: center;
+    
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+.item {
+    display: flex;
+    flex-direction: row;    
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-right: 15px; /* Añadir margen derecho para separar los enlaces */
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+}
+.icono {
+    width: 20px;
+    height: 20px;
+    flex-wrap: wrap;
+    margin-right: 5px; /* Reducir la separación entre imágenes */
+}
+
+.busqueda {
+    display: flex;
+    width: 30%;
+}
+
+
+.blanco {
+    display: flex;
+    text-decoration: none;
+    padding: 20px;
+}
+
+.icono {
+    padding: 5px; /* Reducir padding para acercar las imágenes */
+    width: 25px;
+}
+
+.segundo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%; /* Asegurarse de que la imagen respete el ancho del contenedor */
+    margin: auto;
+}
+
+.clasificar {
+    display: flex;
+}
+
+.titulo {
+    margin-top: auto;
+    font-size: 60px;
+    color: green;
+}
+
+.imagenesdos {
+    width: 70px;
+}
+
+
+.tercero {
+    background-color: rgb(11, 87, 45);
+    display: flex;
+    height: 65px;
+    width: 100%;
+}
+
+
+.enlaces {
+    text-decoration: none;
+    color: white;
+    font-size: 15px;
+    padding: 20px;
+}
+
+
+.botones {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 50px;
+}
+
+.cuarto {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: rgb(230, 230, 230);
+    width: 100%;
+}
+
+.quinto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    width: 90%;
+}
+
+.informacion {
+    margin: 1%;
+}
