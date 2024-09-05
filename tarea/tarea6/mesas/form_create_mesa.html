@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Mesa</title>
+</head>
+<body>
+    <form action="create_mesa.php" method="post">
+        <label for="numero_mes">Número de Mesa:</label>
+        <input type="number" name="numero_mes" id="numero_mes" required><br>
+
+        <label for="departamento_id">Departamento ID:</label>
+        <input type="number" name="departamento_id" id="departamento_id" required><br>
+
+        <label for="municipio_id">Municipio ID:</label>
+        <input type="number" name="municipio_id" id="municipio_id" required><br>
+
+        <label for="lugar_id">Lugar ID:</label>
+        <input type="number" name="lugar_id" id="lugar_id" required><br>
+
+        <label for="recinto_id">Recinto ID:</label>
+        <input type="number" name="recinto_id" id="recinto_id" required><br>
+
+        <input type="submit" value="Registrar Mesa">
+    </form>
+</body>
+</html>

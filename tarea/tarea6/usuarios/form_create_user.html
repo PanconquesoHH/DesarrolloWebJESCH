@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario</title>
+</head>
+<body>
+    <form action="create_user.php" method="post">
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" required><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="password" required><br>
+
+        <label for="nivel">Nivel:</label>
+        <input type="number" name="nivel" id="nivel" min="0" max="10" required><br>
+
+        <input type="submit" value="Registrar Usuario">
+    </form>
+</body>
+</html>
