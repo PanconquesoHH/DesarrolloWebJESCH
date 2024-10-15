@@ -1,0 +1,10 @@
+.caja{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    width: 250px;
+    margin: auto;
+}
+.blue{
+    border: lightblue;
+}

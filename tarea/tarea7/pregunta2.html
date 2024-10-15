@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Par o Impar</title>
+</head>
+<body>
+    <h1>¿El número es Par o Impar?</h1>
+    <p>Introduce un número entero y haz clic en "Verificar" para saber si es par o impar.</p>
+    <form id="parImparForm">
+        <label for="numero">Número:</label>
+        <input type="number" id="numero" name="numero" required><br><br>
+        <input type="submit" value="Verificar">
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+       
+        function esParOImpar(numero) {
+            if (numero % 2 === 0) {
+                return "El número " + numero + " es par.";
+            } else {
+                return "El número " + numero + " es impar.";
+            }
+        } 
+        document.getElementById('parImparForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+          
+            let numero = parseInt(document.getElementById('numero').value);
+
+            let resultado = esParOImpar(numero);
+            document.getElementById('resultado').textContent = resultado;
+        });
+    </script>
+</body>
+</html>

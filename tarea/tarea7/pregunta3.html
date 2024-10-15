@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Verificador de Palíndromos</title>
+</head>
+<body>
+    <h1>¿Es un Palíndromo?</h1>
+    <p>Introduce una cadena de texto y haz clic en "Verificar" para saber si es un palíndromo.</p>
+    <form id="palindromoForm">
+        <label for="texto">Texto:</label>
+        <input type="text" id="texto" name="texto" required><br><br>
+        <input type="submit" value="Verificar">
+    </form>
+    <p id="resultado"></p>
+
+    <script>
+      
+        function esPalindromo(texto) {  
+            let textoLimpio = texto.toLowerCase().replace(/[\s,\.]/g, '');
+
+            let textoInvertido = textoLimpio.split('').reverse().join('');
+            if (textoLimpio === textoInvertido) {
+                return "El texto es un palíndromo.";
+            } else {
+                return "El texto no es un palíndromo.";
+            }
+        }
+        document.getElementById('palindromoForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            let texto = document.getElementById('texto').value;
+            let resultado = esPalindromo(texto);
+            document.getElementById('resultado').textContent = resultado;
+        });
+    </script>
+</body>
+</html>
