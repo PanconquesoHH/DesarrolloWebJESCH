@@ -25,7 +25,6 @@ while ($fila = $resultado->fetch_assoc()) {
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Total de Alumnos por Sexo</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,7 +40,7 @@ while ($fila = $resultado->fetch_assoc()) {
             padding: 8px;
         }
         th {
-            background-color: #007BFF;
+        
             color: white;
         }
         img {
@@ -51,18 +50,17 @@ while ($fila = $resultado->fetch_assoc()) {
     </style>
 </head>
 <body>
-    <h2 style="text-align: center;">Total de Alumnos por Sexo</h2>
     <table>
         <tr>
             <th>Sexo</th>
             <th>Total</th>
         </tr>
         <tr>
-            <td><img src="uploads/varon_icon.png" alt="Varones"> Varones</td>
+            <td> Total Varones<img src="imagenes/hombre.png" alt="Varones"></td>
             <td><?php echo $total_varones; ?></td>
         </tr>
         <tr>
-            <td><img src="uploads/mujer_icon.png" alt="Mujeres"> Mujeres</td>
+            <td>Total Mujeres <img src="imagenes/mujer.png" alt="Mujeres"></td>
             <td><?php echo $total_mujeres; ?></td>
         </tr>
     </table>

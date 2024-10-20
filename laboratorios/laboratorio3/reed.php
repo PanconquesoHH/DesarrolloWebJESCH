@@ -33,6 +33,10 @@ $resultado = $conexion->query($sql);
         tr:nth-child(even) {
             background-color: lightgray;
         }
+        .ref{
+            color: white;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
@@ -40,19 +44,19 @@ $resultado = $conexion->query($sql);
     <table border="1">
         <thead>
             <tr>
-                <th><a href="?orden=fotografia">Fotografía</a></th>
-                <th><a href="?orden=nombres">Nombres</a></th>
-                <th><a href="?orden=apellidos">Apellidos</a></th>
-                <th><a href="?orden=cu">CU</a></th>
-                <th><a href="?orden=sexo">Sexo</a></th>
-                <th><a href="?orden=carrera">Carrera</a></th>
+                <th><a  class="ref" href="?orden=fotografia">Fotografía</a></th>
+                <th><a class="ref" href="?orden=nombres">Nombres</a></th>
+                <th><a class="ref" href="?orden=apellidos">Apellidos</a></th>
+                <th><a class="ref" href="?orden=cu">CU</a></th>
+                <th><a class="ref" href="?orden=sexo">Sexo</a></th>
+                <th><a class="ref" href="?orden=carrera">Carrera</a></th>
             </tr>
         </thead>
         <tbody>
             <?php if ($resultado->num_rows > 0): ?>
                 <?php while ($fila = $resultado->fetch_assoc()): ?>
                     <tr>
-                        <td><img src="<?php echo 'uploads/' . $fila['fotografia']; ?>" alt="Fotografía" width="100"></td>
+                        <td><img src="<?php echo 'imagenes/' . $fila['fotografia']; ?>" alt="Fotografía" width="50"></td>
                         <td><?php echo $fila['nombres']; ?></td>
                         <td><?php echo $fila['apellidos']; ?></td>
                         <td><?php echo $fila['cu']; ?></td>
@@ -71,3 +75,4 @@ $resultado = $conexion->query($sql);
     <?php $conexion->close(); ?>
 </body>
 </html>
+class
