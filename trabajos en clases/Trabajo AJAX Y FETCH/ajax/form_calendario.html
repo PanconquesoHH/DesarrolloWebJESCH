@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario Dinámico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 900px;
+            background-color: #f0f0f0;
+            
+           
+        }
+        #menu {
+            width: 200px;
+            height: 640px;
+            background-color: rgb(245, 245, 245);
+            padding: 10px;
+            color: white;
+            box-sizing: border-box;
+            border-color: black;
+            border-width: 1px;
+            border-style: solid;
+        }
+        #contenido {
+            border: 1px solid #ccc;
+            padding: 20px;
+            width: 600px;
+            height: 600px;
+            background-color: #ffffff;
+            border-color: black;
+            border-width: 1px;
+            border-style: solid;
+        }
+        select {
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        #footer {
+            background-color: #D9773B;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 14px;
+            border-color: black;
+            border-width: 1px;
+            border-style: solid;
+        }
+        .operar{
+            padding: 15px;
+            background-color: red;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <div class="operar">
+        <h3>Opciones</h3>
+    </div>
+        <label for="mes">Mes</label>
+        <select id="mes">
+            <option value="1">Ene</option>
+            <option value="2">Feb</option>
+            <option value="3">Mar</option>
+            <option value="4">Abr</option>
+            <option value="5">May</option>
+            <option value="6">Jun</option>
+            <option value="7">Jul</option>
+            <option value="8">Ago</option>
+            <option value="9">Sep</option>
+            <option value="10">Oct</option>
+            <option value="11">Nov</option>
+            <option value="12">Dic</option>
+        </select>
+
+        <label for="anio">Año</label>
+        <select id="anio">
+      
+        </select>
+    </div>
+
+
+    <div id="contenido">
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
