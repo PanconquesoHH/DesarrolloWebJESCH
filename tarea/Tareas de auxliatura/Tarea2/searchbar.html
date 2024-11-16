@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Búsqueda de Libros</title>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="Buscar libros">
+    <button onclick="buscarLibros()">Buscar</button>
+    <ul id="resultados"></ul>
+
+    <script>
+        function buscarLibros() {
+            const searchTerm = document.getElementById('searchInput').value;
+            fetch(`search.php?prompt=${searchTerm}`)
+                .then(response => response.json())
+                .then(data => {
+    const resultados = document.getElementById('resultados');
+    resultados.innerHTML = '';
+
+    if (data.message) {
+        resultados.textContent = data.message;
+    } else {
+        resultados.textContent = data.titulo; 
+    }
+})
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+        }
+    </script>
+</body>
+</html>
