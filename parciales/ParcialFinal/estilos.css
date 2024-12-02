@@ -1,0 +1,42 @@
+.barra-lateral {
+    width: 150px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: #007bff;
+    color: white;
+    padding-top: 20px;
+    z-index: 1000;
+  }
+  
+
+  .contenido-principal {
+    margin-left: 250px; 
+  }
+  
+ 
+  .barra-inferior {
+    background-color: #343a40;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100% ;
+    left: 150px;
+    z-index: 1000;
+  }
+  
+ 
+  .titulo-tarjeta {
+    color: white;
+    padding: 60px;
+    text-align: center;
+  }
+  
+  .cuerpo-tarjeta {
+    background-color: white;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid black;
+  }
+  
